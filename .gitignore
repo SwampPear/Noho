@@ -3,7 +3,7 @@ env/
 .env
 
 # python
-pychache/
+__pycache__/
 
 # database
 DATA.db
