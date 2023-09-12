@@ -2,17 +2,36 @@ from sqlite3 import Connection
 
 
 class Database:
-    def __init__(self, db_path='DATA.db'):
+    """
+    Controls database integration.
+    """
+
+    def __init__(self, db_path='DATA.db') -> None:
+        """
+        Initializes this Database object.
+
+        Parameters:
+            db_path(str): the path to the local database file
+        """
+
         self.db_path = db_path
         self.con = Connection(db_path)
         self.cur = self.con.cursor()
 
     
-    def execute(self, statement):
+    def execute(self, statement) -> None:
+        """
+        Executes an SQL statement using the given local database.
+        """
+
         self.cur.execute(statement)
 
 
-    def init_database(self):
+    def init_database(self) -> None:
+        """
+        Initializes the database from the designated schemas.
+        """
+
         self.execute(
             """
             CREATE TABLE IF NOT EXISTS team (
