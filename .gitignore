@@ -1,0 +1,9 @@
+# environment
+env/
+.env
+
+# python
+pychache/
+
+# database
+DATA.db
