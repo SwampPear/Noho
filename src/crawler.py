@@ -3,16 +3,40 @@ from selenium.webdriver.common.by import By
 
 
 class Crawler:
+    """
+    Allows for web integration and simple web browser navigation.
+    """
+
     def __init__(self, url='https://app.prizepicks.com') -> None:
+        """
+        Initializes this Crawler.
+
+        Parameters:
+            url(str): base url
+        """
+
         self.url = url
         self.driver = webdriver.Chrome()
 
 
     def get(self, url) -> None:
+        """
+        Navigates to a url.
+
+        Parameters:
+            url(str): the url to navigate to
+        """
         self.driver.get(url)
 
     
-    def add_cookie(self, cookie):
+    def add_cookie(self, cookie) -> None:
+        """
+        Adds a new cookie to the browser session.
+
+        Parameters:
+            cookie(Cookie): the cookie to add
+        """
+
         self.driver.add_cookie(cookie)
 
 
